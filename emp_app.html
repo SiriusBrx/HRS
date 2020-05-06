@@ -1,0 +1,264 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML lang=en><HEAD><TITLE></TITLE>
+<META charset=utf-8>
+<META name=viewport content="width=device-width, initial-scale=1"><LINK 
+rel=stylesheet 
+href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<SCRIPT 
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></SCRIPT>
+
+<SCRIPT 
+src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></SCRIPT>
+
+<SCRIPT 
+src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></SCRIPT>
+
+<STYLE>.fakeimg {
+	HEIGHT: 200px; BACKGROUND: #aaa
+}
+BODY {
+	FONT-FAMILY: "Lato", sans-serif; COLOR: #ffffff
+}
+.sidenav {
+	HEIGHT: 100%; WIDTH: 0px; OVERFLOW-X: hidden; POSITION: fixed; PADDING-TOP: 60px; LEFT: 0px; Z-INDEX: 1; TOP: 0px; BACKGROUND-COLOR: #111; transition: 0.5s
+}
+.sidenav A {
+	FONT-SIZE: 25px; TEXT-DECORATION: none; COLOR: #818181; PADDING-BOTTOM: 8px; PADDING-TOP: 8px; PADDING-LEFT: 32px; DISPLAY: block; PADDING-RIGHT: 8px; transition: 0.3s
+}
+.sidenav A:hover {
+	COLOR: #f1f1f1
+}
+.sidenav .closebtn {
+	FONT-SIZE: 36px; RIGHT: 25px; POSITION: absolute; MARGIN-LEFT: 50px; TOP: 0px
+}
+
+@media Unknown    
+{
+.sidenav {
+	PADDING-TOP: 15px
+}
+.sidenav A {
+	FONT-SIZE: 18px
+}
+
+}
+</STYLE>
+
+<META name=GENERATOR content="MSHTML 11.00.10570.1001"><LINK rel=stylesheet 
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+crossorigin="anonymous">
+<SCRIPT src="https://www.gstatic.com/firebasejs/5.5.3/firebase-app.js"></SCRIPT>
+
+<SCRIPT 
+src="https://www.gstatic.com/firebasejs/5.5.3/firebase-firestore.js"></SCRIPT>
+</HEAD>
+<BODY>
+<SCRIPT src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" 
+crossorigin="anonymous"></SCRIPT>
+
+<SCRIPT 
+src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
+crossorigin="anonymous"></SCRIPT>
+
+<SCRIPT 
+src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" 
+crossorigin="anonymous"></SCRIPT>
+
+<DIV id=mySidenav class=sidenav><A onclick=closeNav() class=closebtn 
+href="javascript:void(0)">x</A> <A href="./emp_mr.html" target=_self>Employee 
+Master Record</A> <A href="./emp_q.html" target=_self>Employee Record Query</A> 
+<A href="./emp_r.html" target=_self>Employee Report</A> <A href="./emp_app.html" 
+target=_blank>Appraisal Entry</A> <A href="./emp_lv.html" target=_self>Leave 
+Application</A> <A href="./emp_payroll.html" target=_self>Payroll 
+Calculation</A> </DIV>
+<SCRIPT>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</SCRIPT>
+<div align="center">
+        <form action="//submit.form" id="StaffEvaluation100" method="post" onsubmit="return ValidateForm(this);">
+            <script type="text/javascript">
+            function ValidateForm(frm) {
+            if (frm.EvaluatorName.value == "") { alert('Evaluator name is required.'); frm.EvaluatorName.focus(); return false; }
+            if (frm.StaffName.value == "") { alert('Staff name is required.'); frm.StaffName.focus(); return false; }
+            return true; }
+            </script>
+            <h1>Staff Appraisal form</h1>
+            <table style="width: 700px; border: 0;" cellpadding="4" cellspacing="0">
+                <tr> <td colspan="2">
+                    <br /> <b>Evaluator</b>
+                </td> </tr> <tr> <td style="width:50%">
+                <label for="EvaluatorName">Evaluator name*:</label><br />
+                <input name="EvaluatorName" type="text" maxlength="100" style="width: 300px;" />
+            </td> <td style="width:50%">
+                <label for="KnewStaffFor">How long have you known this staff?</label><br />
+                <select name="KnewStaffFor">
+                    <option value="0-1 year">1 year or less</option>
+                    <option value="1-3 years">1 - 3 years</option>
+                    <option value="over 3 years">more than 3 years</option>
+                </select>
+            </td> </tr> <tr> <td>
+                <label for="EvaluatorPhoneNumber">Evaluator phone number:</label><br />
+                <input name="EvaluatorPhoneNumber" type="text" maxlength="50" style="width: 300px;" />
+            </td> <td>
+                <label for="EvaluatorEmailAddress">Evaluator email address:</label><br />
+                <input name="EvaluatorEmailAddress" type="text" maxlength="100" style="width: 300px;" />
+            </td> </tr> <tr> <td colspan="2">
+                <br /> <b>Staff</b>
+            </td> </tr> <tr> <td>
+                <label for="StaffName">Staff name*:</label><br />
+                <input name="StaffName" type="text" maxlength="100" style="width: 300px;" />
+            </td> <td>
+                <label for="YearInSchool">Years in school:</label><br />
+                <select name="Rank">
+                    <option value="">- Rank -</option>
+                    <option value="Freshman">Freshman</option>
+                    <option value="Sophomore">Sophomore</option>
+                    <option value="Junior">Junior</option>
+                    <option value="Senior">Senior</option>
+                </select>
+                OR
+                <select name="Grade">
+                    <option value="">- Grade -</option>
+                    <option value="1st grade">1st grade</option>
+                    <option value="2nd grade">2nd grade</option>
+                    <option value="3rd grade">3rd grade</option>
+                    <option value="4th grade">4th grade</option>
+                    <option value="4th grade">4th grade</option>
+                    <option value="5th grade">5th grade</option>
+                    <option value="6th grade">6th grade</option>
+                    <option value="7th grade">7th grade</option>
+                    <option value="8th grade">8th grade</option>
+                    <option value="9th grade">9th grade</option>
+                    <option value="10th grade">10th grade</option>
+                    <option value="11th grade">11th grade</option>
+                    <option value="12th grade">12th grade</option>
+                </select>
+                OR
+                <select name="YearsInSchool">
+                    <option value="">- Years -</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+            </td> </tr> <tr> <td colspan="2">
+                <br /> <b>Staff's performance</b>
+            </td> </tr> <tr> <td>
+                <select name="AcademicProgress" style="width:155px;">
+                    <option value="">- Academic progress -</option>
+                    <option value="Poor">Poor</option>
+                    <option value="Below Average">Below Average</option>
+                    <option value="Average">Average</option>
+                    <option value="Above Average">Above Average</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="N/A">N/A</option>
+                </select>
+                <select name="ClassParticipation" style="width:155px;">
+                    <option value="">- Class participation -</option>
+                    <option value="Poor">Poor</option>
+                    <option value="Below Average">Below Average</option>
+                    <option value="Average">Average</option>
+                    <option value="Above Average">Above Average</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="N/A">N/A</option>
+                </select>
+            </td> <td>
+                <select name="Creativity" style="width:155px;">
+                    <option value="">- Creativity -</option>
+                    <option value="Poor">Poor</option>
+                    <option value="Below Average">Below Average</option>
+                    <option value="Average">Average</option>
+                    <option value="Above Average">Above Average</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="N/A">N/A</option>
+                </select>
+                <select name="Dependability" style="width:155px;">
+                    <option value="">- Dependability -</option>
+                    <option value="Poor">Poor</option>
+                    <option value="Below Average">Below Average</option>
+                    <option value="Average">Average</option>
+                    <option value="Above Average">Above Average</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="N/A">N/A</option>
+                </select>
+            </td> </tr> <tr> <td>
+                <select name="Initiative" style="width:155px;">
+                    <option value="">- Initiative -</option>
+                    <option value="Poor">Poor</option>
+                    <option value="Below Average">Below Average</option>
+                    <option value="Average">Average</option>
+                    <option value="Above Average">Above Average</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="N/A">N/A</option>
+                </select>
+                <select name="Teamwork" style="width:155px;">
+                    <option value="">- Teamwork -</option>
+                    <option value="Poor">Poor</option>
+                    <option value="Below Average">Below Average</option>
+                    <option value="Average">Average</option>
+                    <option value="Above Average">Above Average</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="N/A">N/A</option>
+                </select>
+            </td> <td>
+                <select name="OrganizationalSkills" style="width:155px;">
+                    <option value="">- Organizational skills -</option>
+                    <option value="Poor">Poor</option>
+                    <option value="Below Average">Below Average</option>
+                    <option value="Average">Average</option>
+                    <option value="Above Average">Above Average</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="N/A">N/A</option>
+                </select>
+                <select name="ProblemSolving" style="width:155px;">
+                    <option value="">- Problem solving -</option>
+                    <option value="Poor">Poor</option>
+                    <option value="Below Average">Below Average</option>
+                    <option value="Average">Average</option>
+                    <option value="Above Average">Above Average</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="N/A">N/A</option>
+                </select>
+            </td> </tr> <tr> <td colspan="2">
+                <br />
+                <label for="WhatDistinguishes">What distinguishes this Staff from others?</label>
+                <textarea name="WhatDistinguishes" rows="7" cols="40" style="width: 650px;"></textarea>
+            </td> </tr> <tr> <td colspan="2">
+                <label for="Describe">How would you describe this Staff to others?</label>
+                <textarea name="Describe" rows="7" cols="40" style="width: 650px;"></textarea>
+            </td> </tr> <tr> <td colspan="2">
+                <label for="Comments">Other relevant comments:</label>
+                <textarea name="Comments" rows="7" cols="40" style="width: 650px;"></textarea>
+            </td> </tr> <tr> <td>
+                <br />
+                * - required fields
+            </td> <td>
+                <br />
+                <div style="float: right">
+                    <input name="skip_Submit" type="submit" value="Submit" />
+                    <a href="./index.html" target="_self">Return to main Menu</a>
+
+            </td> </tr>
+            </table>
+        </form>
+</div>
+<SCRIPT src="./app.js"></SCRIPT>
+</BODY></HTML>

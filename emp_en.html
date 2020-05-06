@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML lang=en><HEAD><TITLE></TITLE>
+<META charset=utf-8>
+<META name=viewport content="width=device-width, initial-scale=1"><LINK 
+rel=stylesheet 
+href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<SCRIPT 
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></SCRIPT>
+
+<SCRIPT 
+src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></SCRIPT>
+
+<SCRIPT 
+src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></SCRIPT>
+
+<STYLE>.fakeimg {
+	HEIGHT: 200px; BACKGROUND: #aaa
+}
+BODY {
+	FONT-FAMILY: "Lato", sans-serif; COLOR: #ffffff
+}
+.sidenav {
+	HEIGHT: 100%; WIDTH: 0px; OVERFLOW-X: hidden; POSITION: fixed; PADDING-TOP: 60px; LEFT: 0px; Z-INDEX: 1; TOP: 0px; BACKGROUND-COLOR: #111; transition: 0.5s
+}
+.sidenav A {
+	FONT-SIZE: 25px; TEXT-DECORATION: none; COLOR: #818181; PADDING-BOTTOM: 8px; PADDING-TOP: 8px; PADDING-LEFT: 32px; DISPLAY: block; PADDING-RIGHT: 8px; transition: 0.3s
+}
+.sidenav A:hover {
+	COLOR: #f1f1f1
+}
+.sidenav .closebtn {
+	FONT-SIZE: 36px; RIGHT: 25px; POSITION: absolute; MARGIN-LEFT: 50px; TOP: 0px
+}
+
+@media Unknown    
+{
+.sidenav {
+	PADDING-TOP: 15px
+}
+.sidenav A {
+	FONT-SIZE: 18px
+}
+
+}
+</STYLE>
+
+<META name=GENERATOR content="MSHTML 11.00.10570.1001"><LINK rel=stylesheet 
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+crossorigin="anonymous" 
+integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"></HEAD>
+<BODY>
+<SCRIPT src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+crossorigin="anonymous" 
+integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"></SCRIPT>
+
+<SCRIPT 
+src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+crossorigin="anonymous" 
+integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"></SCRIPT>
+
+<SCRIPT 
+src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+crossorigin="anonymous" 
+integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"></SCRIPT>
+
+<DIV id=mySidenav class=sidenav><A onclick=closeNav() class=closebtn 
+href="javascript:void(0)">x</A> <A href="https://hrs0-be700.firebaseapp.com" 
+target=_self>Employee Master Record</A> <A href="./emp_q.html" 
+target=_self>Employee Record Query</A> <A href="./emp_r.html" 
+target=_self>Employee Report</A> <A href="./emp_app.html" 
+target=_blank>Appraisal Entry</A> <A href="./emp_lv.html" target=_self>Leave 
+Application</A> <A href="./emp_payroll.html" target=_self>Payroll 
+Calculation</A> </DIV>
+<SCRIPT>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</SCRIPT>
+
+<DIV class="jumbotron text-center" style="MARGIN-BOTTOM: 0px">
+<H1>Worth Wealth Finance Limited</H1>
+<P>Human Resources Information System</P></DIV><NAV 
+class="navbar navbar-expand-sm bg-dark navbar-dark"><SPAN onclick=openNav() 
+style="FONT-SIZE: 30px; CURSOR: pointer"><FONT color=#ffffff>Menu 
+</FONT></SPAN><BUTTON class=navbar-toggler data-toggle="collapse" 
+data-target="#collapsibleNavbar"><SPAN 
+class=navbar-toggler-icon></SPAN></BUTTON> 
+<DIV id=collapsibleNavbar class="collapse navbar-collapse">
+<UL class=navbar-nav></UL></DIV></NAV>
+<DIV class=container style="MARGIN-TOP: 30px">
+<DIV class=row>
+<DIV class=col-sm-4>
+<TABLE style="HEIGHT: 122px; WIDTH: 1000px" cellSpacing=2 cellPadding=1 
+width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width="25%">
+      <P align=right>Staff ID: </P></TD>
+    <TD><INPUT id=SID type=textfield></TD>
+    <TD>
+      <P align=right>Birthdate: </P></TD>
+    <TD><INPUT id=bdate type=date></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD width="25%">
+      <P align=right>First Name:</P></TD>
+    <TD><INPUT id=fname></TD>
+    <TD width="25%">
+      <P align=right>Last Name:</P></TD>
+    <TD><INPUT id=lname> </TD>
+    <TD></TD></TR>
+  <TR>
+    <TD width="25%">
+      <P align=right>Salary:</P></TD>
+    <TD><INPUT id=salary></TD>
+    <TD width="25%">
+      <P align=right>Education Level:</TD>
+    <TD><select id="elv">Education Level</P>
+	  <option value="primary School">Primary School</option>
+	  <option value="Secondary School">Secondary School</option>
+	  <option value="Undergraduate">Undergraduate</option>
+	  <option value="Postgraduate">Postgraduate</option></select></TD>
+    <TD></TD></TR>
+  <TR>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD></TD>
+    <TD><BUTTON id=saveButton>Submit</BUTTON></TD></TR></TBODY></TABLE><BR><BR><BR></DIV></DIV></DIV>
+<DIV class="jumbotron text-center" style="MARGIN-BOTTOM: 0px">
+  <script src="./app.js"></script>
+<P>All rights reserved (C) Worth Wealth Finance Limited</P></DIV></BODY></HTML>

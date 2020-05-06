@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML lang=en><HEAD><TITLE></TITLE>
+<META charset=utf-8>
+<META name=viewport content="width=device-width, initial-scale=1"><LINK 
+rel=stylesheet 
+href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<SCRIPT 
+src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></SCRIPT>
+
+<SCRIPT 
+src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></SCRIPT>
+
+<SCRIPT 
+src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></SCRIPT>
+
+<STYLE>.fakeimg {
+	HEIGHT: 200px; BACKGROUND: #aaa
+}
+BODY {
+	FONT-FAMILY: "Lato", sans-serif; COLOR: #ffffff
+}
+.sidenav {
+	HEIGHT: 100%; WIDTH: 0px; OVERFLOW-X: hidden; POSITION: fixed; PADDING-TOP: 60px; LEFT: 0px; Z-INDEX: 1; TOP: 0px; BACKGROUND-COLOR: #111; transition: 0.5s
+}
+.sidenav A {
+	FONT-SIZE: 25px; TEXT-DECORATION: none; COLOR: #818181; PADDING-BOTTOM: 8px; PADDING-TOP: 8px; PADDING-LEFT: 32px; DISPLAY: block; PADDING-RIGHT: 8px; transition: 0.3s
+}
+.sidenav A:hover {
+	COLOR: #f1f1f1
+}
+.sidenav .closebtn {
+	FONT-SIZE: 36px; RIGHT: 25px; POSITION: absolute; MARGIN-LEFT: 50px; TOP: 0px
+}
+
+@media Unknown    
+{
+.sidenav {
+	PADDING-TOP: 15px
+}
+.sidenav A {
+	FONT-SIZE: 18px
+}
+
+}
+</STYLE>
+
+<META name=GENERATOR content="MSHTML 11.00.10570.1001"><LINK rel=stylesheet 
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+crossorigin="anonymous" 
+integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh">
+<SCRIPT src="https://www.gstatic.com/firebasejs/5.5.3/firebase-app.js"></SCRIPT>
+
+<SCRIPT 
+src="https://www.gstatic.com/firebasejs/5.5.3/firebase-firestore.js"></SCRIPT>
+</HEAD>
+<BODY>
+<SCRIPT src="https://code.jquery.com/jquery-3.4.1.slim.min.js" 
+crossorigin="anonymous" 
+integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"></SCRIPT>
+
+<SCRIPT 
+src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+crossorigin="anonymous" 
+integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"></SCRIPT>
+
+<SCRIPT 
+src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" 
+crossorigin="anonymous" 
+integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"></SCRIPT>
+
+<DIV id=mySidenav class=sidenav><A onclick=closeNav() class=closebtn 
+href="javascript:void(0)">x</A> <A href="https://hrs0-be700.firebaseapp.com" 
+target=_self>Employee Master Record</A> <A href="emp_q.html" 
+target=_self>Employee Record Query</A> <A href="emp_r.html" 
+target=_self>Employee Report</A> <A href="emp_app.html" target=_blank>Appraisal 
+Entry</A> <A href="emp_lv.html" target=_self>Leave Application</A> <A 
+href="emp_payroll.html" target=_self>Payroll Calculation</A> </DIV>
+<SCRIPT>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</SCRIPT>
+
+<DIV class="jumbotron text-center" style="MARGIN-BOTTOM: 0px">
+<H1>Worth Wealth Finance Limited</H1>
+<P>Human Resources Information System</P></DIV><NAV 
+class="navbar navbar-expand-sm bg-dark navbar-dark"><SPAN onclick=openNav() 
+style="FONT-SIZE: 30px; CURSOR: pointer"><FONT color=#ffffff>Menu 
+</FONT></SPAN><BUTTON class=navbar-toggler data-toggle="collapse" 
+data-target="#collapsibleNavbar"><SPAN 
+class=navbar-toggler-icon></SPAN></BUTTON> 
+<DIV id=collapsibleNavbar class="collapse navbar-collapse">
+<UL class=navbar-nav></UL></DIV></NAV>
+<DIV class=container style="MARGIN-TOP: 30px">
+<DIV class=row>
+<DIV class=col-sm-4>
+<FIELDSET name="Payroll"><LEGEND>Payroll</LEGEND>
+<FORM 
+style="BORDER-TOP-COLOR: ; BORDER-LEFT-COLOR: ; BORDER-BOTTOM-COLOR: ; BORDER-RIGHT-COLOR: ">
+<TABLE class=MsoNormalTable 
+style="mso-yfti-tbllook: 1184; mso-padding-alt: 0cm 0cm 0cm 0cm; mso-cellspacing: 0cm" 
+cellSpacing=0 cellPadding=0 border=0>
+  <TBODY>
+  <TR style="HEIGHT: 26.75pt; mso-yfti-irow: 0; mso-yfti-firstrow: yes">
+    <TD 
+    style="HEIGHT: 26.75pt; WIDTH: 226.6pt; PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt" 
+    width=302>
+      <P class=MsoNormal style="mso-margin-top-alt: auto"><LABEL for=SID>Staff 
+      ID:</LABEL> <SELECT id=SID name=SID> <OPTION selected 
+        value=0001>0001</OPTION> <OPTION value=0002>0002</OPTION> <OPTION 
+        value=0003>0003</OPTION> <OPTION value=0004>0004</OPTION></SELECT></P></TD>
+    <TD 
+    style="HEIGHT: 26.75pt; WIDTH: 438.3pt; PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt" 
+    width=584>
+      <P class=MsoNormal style="mso-margin-top-alt: auto"><LABEL for=sname>Staff 
+      Name:</LABEL> <SELECT id=sname name=sname> <OPTION selected 
+        value="Peter Wong">Peter Wong</OPTION> <OPTION value="Bryan Ha">Peter 
+        Wong</OPTION> <OPTION value="Nicole Ho">Nicole Ho</OPTION> <OPTION 
+        value="Stephen Chen">Stephen Chen</OPTION></SELECT></P></TD></TR>
+  <TR style="HEIGHT: 26.75pt; mso-yfti-irow: 1">
+    <TD 
+    style="HEIGHT: 26.75pt; WIDTH: 226.6pt; PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt" 
+    width=302>
+      <P class=MsoNormal style="mso-margin-top-alt: auto"><LABEL 
+      for=salary>Salary:</LABEL><INPUT id=salary></P></TD>
+    <TD 
+    style="HEIGHT: 26.75pt; WIDTH: 438.3pt; PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt" 
+    width=584>
+      <P class=MsoNormal style="mso-margin-top-alt: auto"><LABEL for=OT>Over 
+      time allowance:</LABEL><INPUT id=OT></P></TD></TR>
+  <TR style="HEIGHT: 27.5pt; mso-yfti-irow: 2">
+    <TD 
+    style="HEIGHT: 27.5pt; WIDTH: 226.6pt; PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt" 
+    width=302>
+      <P class=MsoNormal style="mso-margin-top-alt: auto"><LABEL 
+      for=bonus>Bonus:</LABEL><INPUT id=bonus><O:P></O:P></P></TD>
+    <TD 
+    style="HEIGHT: 27.5pt; WIDTH: 438.3pt; PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt" 
+    width=584>
+      <P class=MsoNormal 
+style="mso-margin-top-alt: auto"><U1:P></U1:P></P></TD></TR>
+  <TR style="HEIGHT: 27.5pt; mso-yfti-irow: 3">
+    <TD 
+    style="HEIGHT: 27.5pt; WIDTH: 664.9pt; PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt" 
+    width=887 colSpan=2>
+      <P class=MsoNormal style="mso-margin-top-alt: auto"><LABEL 
+      for=remarks>Remarks:</LABEL><TEXTAREA id=remarks rows=4 cols=60></TEXTAREA></P></TD></TR>
+  <TR style="HEIGHT: 27.5pt; mso-yfti-irow: 4; mso-yfti-lastrow: yes">
+    <TD 
+    style="HEIGHT: 27.5pt; WIDTH: 664.9pt; PADDING-BOTTOM: 0cm; PADDING-TOP: 0cm; PADDING-LEFT: 5.4pt; PADDING-RIGHT: 5.4pt" 
+    width=887 colSpan=2>
+      <P class=MsoNormal style="TEXT-ALIGN: right; mso-margin-top-alt: auto" 
+      align=right><BUTTON value="Print">Print</BUTTON> <INPUT type=submit value=Submit></P></TD></TR></TBODY></TABLE></FORM></FIELDSET> 
+<BR><BR><BR></DIV></DIV></DIV>
+<DIV class="jumbotron text-center" style="MARGIN-BOTTOM: 0px">
+<P>All rights reserved (C) Worth Wealth Finance Limited</P></DIV>
+<SCRIPT src="app.js"></SCRIPT>
+</BODY></HTML>
